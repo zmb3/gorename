@@ -8,7 +8,7 @@
     "rename"
   ],
   "main": "./lib/main",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": "https://github.com/zmb3/gorename",
   "license": "MIT",
   "engines": {
