@@ -1,0 +1,10 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Rename Symbol Under Cursor (gorename)",
+        "command": "gorename:rename"
+      }
+    ]
+  }
+}
