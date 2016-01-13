@@ -9,7 +9,6 @@ describe('gorename', () => {
         return atom.packages.activatePackage('gorename')
       }).then((pack) => {
         mainModule = pack.mainModule
-        console.log(mainModule)
       })
     })
 
