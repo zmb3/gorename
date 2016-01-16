@@ -54,7 +54,7 @@ describe('gorename', () => {
     })
 
     it('renames a single token', () => {
-      editor.setCursorScreenPosition([4, 5])
+      editor.setCursorBufferPosition([4, 5])
       let info = gorename.wordAndOffset(editor)
       expect(info.word).toBe('foo')
       expect(info.offset).toBe(33)
@@ -70,7 +70,7 @@ describe('gorename', () => {
       runs(() => {
         expect(r).toBeTruthy()
         expect(r.success).toBe(true)
-        expect(r.result.stderr).toBe('')
+        expect(r.result.stderr).toBe('Renamed 2 occurrences in 1 file in 1 package.\n')
         let expected = fs.readFileSync(path.join(__dirname, 'fixtures', 'basic-expected', 'main.go'), 'utf8')
         let actual = editor.getText()
         expect(actual).toBe(expected)
