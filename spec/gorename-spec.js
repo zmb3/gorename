@@ -38,7 +38,7 @@ describe('gorename', () => {
     })
   })
 
-  fdescribe('when a simple file is open', () => {
+  describe('when a simple file is open', () => {
     beforeEach(() => {
       runs(() => {
         source = path.join(__dirname, 'fixtures', 'basic')
