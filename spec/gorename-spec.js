@@ -70,7 +70,7 @@ describe('gorename', () => {
       runs(() => {
         expect(r).toBeTruthy()
         expect(r.success).toBe(true)
-        expect(r.result.stderr).toBe('Renamed 2 occurrences in 1 file in 1 package.\n')
+        expect(r.result.stdout.trim()).toBe('Renamed 2 occurrences in 1 file in 1 package.')
         let expected = fs.readFileSync(path.join(__dirname, 'fixtures', 'basic-expected', 'main.go'), 'utf8')
         let actual = editor.getText()
         expect(actual).toBe(expected)
