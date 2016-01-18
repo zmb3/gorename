@@ -32,12 +32,18 @@
     "temp": "^0.8.3"
   },
   "package-deps": [
-    "go-config"
+    "go-config",
+    "go-get"
   ],
   "consumedServices": {
     "go-config": {
       "versions": {
         "0.1.0": "consumeGoconfig"
+      }
+    },
+    "go-get": {
+      "versions": {
+        "0.1.0": "consumeGoGet"
       }
     }
   }
