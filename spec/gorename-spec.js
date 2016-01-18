@@ -15,7 +15,7 @@ describe('gorename', () => {
 
   beforeEach(() => {
     runs(() => {
-      gopath = temp.mkdirSync('gopath-')
+      gopath = fs.realpathSync(temp.mkdirSync('gopath-'))
     })
 
     waitsForPromise(() => {
