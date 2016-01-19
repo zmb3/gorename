@@ -1,5 +1,5 @@
 {
   "atom-text-editor": {
-    "ctrl-shift-r": "gorename:rename"
+    "alt-r": "gorename:rename"
   }
 }
