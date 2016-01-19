@@ -1,5 +1,5 @@
 {
-    "atom-text-editor": {
-            "alt-r": "gorename:rename"
-    }
+  "atom-text-editor": {
+    "alt-r": "gorename:rename"
+  }
 }
