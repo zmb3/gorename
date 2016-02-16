@@ -20,7 +20,7 @@
     "url": "https://github.com/zmb3/gorename/issues"
   },
   "dependencies": {
-    "atom-package-deps": "^3.0.6"
+    "atom-package-deps": "^4.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^4.1.3",
