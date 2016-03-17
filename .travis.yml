@@ -14,11 +14,11 @@ os:
 language: go
 
 go:
-  - 1.5.1
+  - 1.6
 
 env:
   global:
-    - APM_TEST_PACKAGES="environment go-config"
+    - APM_TEST_PACKAGES="environment go-config go-get"
 
   matrix:
     - ATOM_CHANNEL=stable

@@ -1,4 +1,5 @@
 'use babel'
+/* eslint-env jasmine */
 
 import temp from 'temp'
 import path from 'path'
@@ -10,12 +11,17 @@ describe('gorename', () => {
   let gorename = null
   let editor = null
   let gopath = null
+  let oldGopath = null
   let source = null
   let target = null
 
   beforeEach(() => {
     runs(() => {
+      if (process.env.GOPATH) {
+        oldGopath = process.env.GOPATH
+      }
       gopath = fs.realpathSync(temp.mkdirSync('gopath-'))
+      process.env.GOPATH = gopath
     })
 
     waitsForPromise(() => {
@@ -26,16 +32,21 @@ describe('gorename', () => {
       }).then((pack) => {
         mainModule = pack.mainModule
         gorename = mainModule.gorename
+        return
       })
     })
 
     waitsFor(() => {
       return mainModule.getGoconfig() !== false
     })
+  })
 
-    runs(() => {
-      mainModule.getGoconfig().environment()['GOPATH'] = gopath
-    })
+  afterEach(() => {
+    if (oldGopath) {
+      process.env.GOPATH = oldGopath
+    } else {
+      delete process.env.GOPATH
+    }
   })
 
   describe('when a simple file is open', () => {
@@ -49,6 +60,7 @@ describe('gorename', () => {
       waitsForPromise(() => {
         return atom.workspace.open(path.join(target, 'main.go')).then((e) => {
           editor = e
+          return
         })
       })
     })
@@ -62,9 +74,17 @@ describe('gorename', () => {
       let file = editor.getBuffer().getPath()
       let cwd = path.dirname(file)
       let r = false
+      let cmd
       waitsForPromise(() => {
-        return gorename.runGorename(file, info.offset, cwd, 'bar').then((result) => {
+        return mainModule.getGoconfig().locator.findTool('gorename').then((c) => {
+          expect(c).toBeTruthy()
+          cmd = c
+        })
+      })
+      waitsForPromise(() => {
+        return gorename.runGorename(file, info.offset, cwd, 'bar', cmd).then((result) => {
           r = result
+          return
         })
       })
       runs(() => {
