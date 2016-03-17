@@ -12,7 +12,7 @@
   "repository": "https://github.com/zmb3/gorename",
   "license": "MIT",
   "engines": {
-    "atom": ">=1.5.4 <2.0.0"
+    "atom": ">=1.5.3 <2.0.0"
   },
   "author": "Zac Bergquist <zbergquist99@gmail.com> (http://github.com/zmb3)",
   "homepage": "https://atom.io/packages/gorename",
