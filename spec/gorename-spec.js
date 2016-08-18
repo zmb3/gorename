@@ -25,9 +25,7 @@ describe('gorename', () => {
     })
 
     waitsForPromise(() => {
-      return atom.packages.activatePackage('environment').then(() => {
-        return atom.packages.activatePackage('go-config')
-      }).then(() => {
+      return atom.packages.activatePackage('go-config').then(() => {
         return atom.packages.activatePackage('gorename')
       }).then((pack) => {
         mainModule = pack.mainModule
