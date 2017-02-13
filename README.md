@@ -1,5 +1,7 @@
 # gorename [![Build status](https://ci.appveyor.com/api/projects/status/t0iooc52cgq9000s/branch/master?svg=true)](https://ci.appveyor.com/project/zmb3/gorename/branch/master) [![Build Status](https://travis-ci.org/zmb3/gorename.svg?branch=master)](https://travis-ci.org/zmb3/gorename)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zmb3/gorename.svg)](https://greenkeeper.io/)
+
 ## Deprecated
 
 This package has been deprecated.  Its functionality has been merged into the
